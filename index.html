@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container">
+  <div class="box">
+    <div class="header">
+      <h1 id="status"></h1>
+    </div>
+    <div class="header">
+      <h1 id="time">25:00</h1>
+    </div>
+    <div class="controls">
+      <button id="start" class="btn btn-primary">Start</button>
+      <button id="reset" class="btn btn-secondary">Reset</button>
+    </div>
+    <div class="settings">
+      <label for="work-minutes">Work Session</label>
+      <div class="input-group">
+        <input type="number" id="work-minutes" value="0" min="0" class="input-small">
+        <span class="separator">:</span>
+        <input type="number" id="work-seconds" value="5" min="0" max="59" class="input-small">
+      </div>
+      <label for="break-minutes">Break Session</label>
+      <div class="input-group">
+        <input type="number" id="break-minutes" value="0" min="0" class="input-small">
+        <span class="separator">:</span>
+        <input type="number" id="break-seconds" value="7" min="0" max="59" class="input-small">
+      </div>
+    </div>
+  </div>
+  <!-- Custom Modal -->
+  <div id="custom-alert" class="modal">
+    <div class="modal-content">
+      <p id="modal-text"></p>
+      <button id="modal-ok" class="btn btn-primary">OK</button>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
