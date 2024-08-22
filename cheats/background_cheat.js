@@ -3,17 +3,15 @@ let timeLeft;
 let isWorkState = true;
 let workTimeGlobal, restTimeGlobal;
 
-// Setup the notification close listener
 chrome.notifications.onClosed.addListener(() => {
-    // Start the timer for the next state when the notification is closed
     isWorkState = !isWorkState;
     startTimer(workTimeGlobal, restTimeGlobal);
 });
 
 function startTimer(workTime, restTime) {
-    if (timer) clearInterval(timer); // Clear any existing timer
+    if (timer) clearInterval(timer);
 
-    workTimeGlobal = workTime; // Save user input globally
+    workTimeGlobal = workTime;
     restTimeGlobal = restTime;
 
     timeLeft = isWorkState ? workTime : restTime;
@@ -21,7 +19,6 @@ function startTimer(workTime, restTime) {
     timer = setInterval(function() {
         timeLeft--;
 
-        // Send the updated timeLeft to the popup to render the countdown
         chrome.runtime.sendMessage({
             action: 'updateTime',
             timeLeft: timeLeft,
@@ -31,16 +28,12 @@ function startTimer(workTime, restTime) {
         if (timeLeft <= 0) {
             clearInterval(timer);
 
+            // Create a notification when the timer ends
             chrome.notifications.create('pomodoroNotification', {
                 type: 'basic',
-                iconUrl: 'icon.png',
+                iconUrl: "icon.png",
                 title: 'Pomodoro Timer',
                 message: isWorkState ? 'Work session is over. Take a break!' : 'Break is over. Back to work!',
-            }, (notificationId) => {
-                chrome.notifications.onClicked.addListener(() => {
-                    isWorkState = !isWorkState;
-                    startTimer(workTime, restTime);
-                });
             });
 
         }

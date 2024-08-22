@@ -14,9 +14,6 @@ startButton.addEventListener('click', startTimer);
 resetButton.addEventListener('click', resetTimer);
 
 function startTimer() {
-    //   if (timer) clearInterval(timer); // Clear any existing timer
-    //   isRunning = true;
-
     workTime = parseInt(workMinutesInput.value) * 60 + parseInt(workSecondsInput.value);
     breakTime = parseInt(breakMinutesInput.value) * 60 + parseInt(breakSecondsInput.value);
 
@@ -42,12 +39,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const minutes = Math.floor(message.timeLeft / 60);
         const seconds = message.timeLeft % 60;
         timeDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    } else if (message.action === 'showAlert') {
-        alert(message.message);
-        chrome.runtime.sendMessage({
-            action: 'alertClosed',
-            workTime: workTime,
-            restTime: breakTime
-        });
     }
 });
