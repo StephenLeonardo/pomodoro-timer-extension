@@ -49,8 +49,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         startTimer(message.workTime, message.restTime);
     } else if (message.action === 'reset') {
         resetTimer();
-    } else if (message.action === 'alertClosed') {
-        isWorkState = !isWorkState;
-        startTimer(message.workTime, message.restTime);
     }
 });
