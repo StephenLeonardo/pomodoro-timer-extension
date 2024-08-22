@@ -1,11 +1,17 @@
 {
-    "manifest_version": 3,
-    "name": "Pomodoro Tracker",
-    "version": "1.0",
-    "description": "A simple Pomodoro timer.",
-    "action": {
-      "default_popup": "index.html"
-    },
-    "permissions": ["storage"]
+  "manifest_version": 3,
+  "name": "Pomodoro Timer",
+  "version": "1.0",
+  "description": "A simple Pomodoro timer",
+  "permissions": [
+    "notifications",
+    "background"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Pomodoro Timer"
   }
-  
+}
