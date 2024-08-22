@@ -21,3 +21,26 @@ git clone https://github.com/StephenLeonardo/pomodoro-timer-extension.git
 - Buka Chrome dan navigasi ke `chrome://extensions/`.
 - Aktifkan "Mode Pengembang" dengan mengaktifkan tombol di sudut kanan atas.
 - Klik "Muat yang tidak dikemas" dan pilih folder tempat Anda meng-clone repository.
+
+## **Instruksi Penggunaan**
+
+1. **Atur Timer Kerja:**
+- Buka popup ekstensi.
+- Atur interval kerja yang diinginkan (default adalah 25 menit).
+- Klik "Mulai" untuk memulai timer.
+
+2. **Atur Timer Istirahat:**
+- Setelah timer kerja berakhir, timer istirahat akan otomatis dimulai.
+- Atur interval istirahat yang diinginkan (default adalah 5 menit).
+
+3. **Notifikasi:**
+- Anda akan menerima notifikasi saat timer mencapai nol, mengingatkan Anda untuk beralih antara kerja dan istirahat.
+
+## **Kasus Tepi yang Harus Dipertimbangkan**
+
+- **Lanjutan Timer:** Timer terus berjalan di latar belakang meskipun Anda menutup popup ekstensi atau berpindah tab.
+- **Preferensi Notifikasi:** Pastikan notifikasi Chrome Anda diaktifkan untuk menerima notifikasi.
+
+## **Kontribusi**
+
+Silakan berkontribusi untuk proyek ini! Anda dapat me-fork repository, melakukan perubahan, dan mengirimkan pull request. Kontribusi, masalah, dan permintaan fitur sangat dihargai!
