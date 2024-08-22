@@ -14,7 +14,7 @@ Ekstensi Chrome Pomodoro Timer membantu Anda mengatur waktu secara efektif mengg
 
 ### 1. Clone atau Unduh Repository:
 ```bash
-git clone https://github.com/your-username/pomodoro-timer-extension.git
+git clone https://github.com/StephenLeonardo/pomodoro-timer-extension.git
 ```
 
 ### 2. Muat Ekstensi di Chrome:
